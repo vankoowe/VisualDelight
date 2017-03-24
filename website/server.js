@@ -11,17 +11,28 @@ app.use('/libs', express.static(path.join(__dirname, '/public/libs')));
 app.use('/app', express.static(path.join(__dirname, '/public/app')));
 
 MongoClient.connect(url)
+
     .then((db) => {
         console.log("Connected to MongoDB");
+        return db;
     })
+
+    .then((db) => {
+
+        // Simple routing to home page
+        app.get('/', (req, res) => {
+            res.sendFile(path.join(__dirname, '/public/app/index.html'));
+        });
+        
+    })    
+
+    .then(() => {    
+        app.listen(3001, () => {
+            console.log("Server running at http://127.0.0.1:3001");
+        });
+    })    
+
     .catch((err) => {
 
     });
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, '/public/app/index.html'));
-// });
-
-// app.listen(3001, () => {
-//     console.log("Server running at http://127.0.0.1:3001");
-// });
