@@ -1,0 +1,27 @@
+{
+  "name": "visual_delight",
+  "version": "1.0.0",
+  "description": "website",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VIVelev/VisualDelight.git"
+  },
+  "author": "Victor Velev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VIVelev/VisualDelight/issues"
+  },
+  "homepage": "https://github.com/VIVelev/VisualDelight#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

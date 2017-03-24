@@ -1,0 +1,17 @@
+{
+  "name": "visual_delight",
+  "description": "website",
+  "main": "server.js",
+  "authors": [
+    "Victor Velev"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/VIVelev/VisualDelight",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
