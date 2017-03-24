@@ -5,7 +5,9 @@ path = require('path'),
 config = require('./config'),
 
 MongoClient = require('mongodb').MongoClient,
-url = config.dbConfig.host + ":" + config.dbConfig.port + "/" + config.dbConfig.collection;
+url = config.dbConfig.host + ":" + config.dbConfig.port + "/" + config.dbConfig.db;
+
+app.set('view engine', 'pug');
 
 app.use('/libs', express.static(path.join(__dirname, '/public/libs')));
 app.use('/app', express.static(path.join(__dirname, '/public/app')));
@@ -23,7 +25,12 @@ MongoClient.connect(url)
         app.get('/', (req, res) => {
             res.sendFile(path.join(__dirname, '/public/app/index.html'));
         });
-        
+
+        //Register routing
+        app.get('/to_register', (req, res) => {
+            res.render('register');    
+        });
+
     })    
 
     .then(() => {    
@@ -33,6 +40,6 @@ MongoClient.connect(url)
     })    
 
     .catch((err) => {
-
+        console.error(`Error: ${err}`);
     });
 

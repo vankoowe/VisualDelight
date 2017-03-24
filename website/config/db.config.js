@@ -1,7 +1,7 @@
 const config = {
     host: "mongodb://127.0.0.1",
     port: "27017",
-    collection: "users"
+    db: "vd"
 };
 
 module.exports = config;
